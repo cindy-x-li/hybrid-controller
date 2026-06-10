@@ -1,0 +1,3 @@
+[submodule "stl-control-imitation"]
+	path = stl-control-imitation
+	url = https://gitlab.com/alex.donze/stl-control-imitation
