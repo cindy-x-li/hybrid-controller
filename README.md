@@ -1,8 +1,9 @@
 # Hybrid Controller
 
 This repository contains the top-level architecture for hybrid control 
-systems, currently focusing on the WaterTank model. It uses the `Breach` falsification
-toolbox and a control gitlab repository named: `stl-control-imitation`.
+systems, currently focusing on the WaterTank model. It uses the [`Breach` falsification
+toolbox](https://gitlab.com/alex.donze/stl-control-imitation) and a control 
+gitlab repository named: [`stl-control-imitation`](https://gitlab.com/alex.donze/stl-control-imitation).
 
 ## Repository Structure
 
