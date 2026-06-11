@@ -1,5 +1,4 @@
 % test_watertank.m
-clear;
 
 % Initialize the class
 init_watertank;

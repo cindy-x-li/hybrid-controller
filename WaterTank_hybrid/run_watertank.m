@@ -1,8 +1,10 @@
-% run_watertank.m
-clear; clc;
-
-% Instantiate the object from your blueprint
+% title: run_watertank.m
 init_watertank;
+
+warning('off', 'MATLAB:mpath:nameNonexistentOrNotADirectory');
+gcp; 
+% Send a command to explicitly mute all background workers
+pctRunOnAll('warning(''off'', ''MATLAB:mpath:nameNonexistentOrNotADirectory'');');
 
 % Define the options for THIS specific training run1
 % 2 var to the power of 2
@@ -15,17 +17,20 @@ init_sampling.recompute = 1;
 falsif_sampling.num_corners = 4; 
 falsif_sampling.num_quasi_random = 10;
 falsif_sampling.seed = 200;
-falsif_sampling.recompute = 0;
+falsif_sampling.recompute = 1;
 %  set to 0 for random global search 1
 falsif_sampling.local_max_obj_eval = 0;
 % set to default when not defined
 % falsif_sampling.scaling = 0.8;
 
-% Step 3: Start the Imitation Learning Loop!
+% Step 3: Start the Imitation Learning Loop
+% num_training needs to be greater than 2
 disp('Starting Water Tank Imitation Learning...');
 res = pb_watertank.algo2(...
     'init_sampling', init_sampling, ...
     'falsif_sampling', falsif_sampling, ...
-    'num_training', 5, ...             
+    'num_training', 2, ...             
     'max_num_cex_traces', 20, ...
     'max_num_cex_samples', 20);
+
+warning('on', 'MATLAB:mpath:nameNonexistentOrNotADirectory');

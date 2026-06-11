@@ -85,10 +85,5 @@ classdef WaterTank_imitation_pb < imitation_pb
                 scalingLayer('Name','ActorScaling','Scale',umax)
                 regressionLayer('Name','routput')];
         end
-        
-        function str = get_result_file_name(~, ~)
-            fileName = ['Res_WaterTank_' datestr(now, 'dd-mmm-yyyy-HH_MM_SS')];
-            str = fullfile('watertank_NN', fileName);
-        end
     end
 end

@@ -1,0 +1,10 @@
+# Ignore folders
+external/
+data/
+logs/
+
+# Ignore personal environment configurations
+local_config.m
+
+# Ignore MATLAB cache and auto-save files
+*.asv
