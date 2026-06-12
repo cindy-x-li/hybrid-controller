@@ -64,9 +64,6 @@ init_workspace
 ```
 
 ### MATLAB 
-Download:
-[License through UGA](https://fr.mathworks.com/academia/tah-portal/universite-grenoble-alpes-31749054.html)
-
 Download following toolboxes:
 1. Control System  
 2. Deep Learning 
