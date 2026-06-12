@@ -15,13 +15,13 @@ hybrid-controller/
 ├── logs/                         # Execution logs
 ├── stl-control-imitation/        # (Git Submodule) Core control library
 ├── WaterTank_hybrid/             # WaterTank specific models and scripts
-│   ├── tuning_controllers/       # Process for designing individual controllers
-│   ├── WaterTank_model/          # Contains imitation learning files
+│   ├── tuning_controllers/       # Process & results for controller designs
+│   ├── WaterTank_model/          # Contains the imitation learning files
 │   ├── init_watertank.m          # WaterTank initialization
-│   ├── run_watertank.m           # Main execution script for WaterTank
-│   └── test_watertank.m          # Tests if expert runs
+│   ├── run_watertank.m           # Main execution script
+│   └── test_watertank.m          # Tests if expert runs in environment
 ├── init_workspace.m              # Master workspace initialization script
-├── local_config_template.m       # Template for overriding Breach paths
+├── local_config_template.m       # Template for your own Breach install
 └── setup.sh                      # Bash script to download dependencies
 ```
 
@@ -37,10 +37,10 @@ cd hybrid-controller
 2. Install Breach
 
 This project requires Breach to evaluate Signal Temporal Logic (STL). Breach 
-will be installed in a folder called `external` if the `step.sh` is used. This 
+will be installed in a folder called `external` if the `setup.sh` is used. This 
 method only clones the Breach Github project. It does not use the built binary 
 files for intel. Thus, depending on your machine, you may have to make additional modifications to 
-successfully run Breach.  
+successfully run Breach. See notes below.
 ```
 chmod +x setup.sh
 ./setup.sh
@@ -54,8 +54,7 @@ b. Open `local_config.m` and update the custom_breach_path variable with the abs
 
 
 Notes: For the arm64 chip, Matlab was configured to use Xcode complier to 
-build and to use the classic linker by modifying compile_stl_mex.m 
-and CompileRobusthom.m
+build and to use the classic linker by modifying compile_stl_mex.m and CompileRobusthom.m
 
 
 3. Initialize the workspace:
